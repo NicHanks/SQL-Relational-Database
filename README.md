@@ -13,19 +13,11 @@ The purpose of this software is to utilize the SQLite3 module.
 
 # Relational Database
 
-{Describe the relational database you are using.}
-The database I am using is the 
-
-{Describe the structure (tables) of the relational database that you created.}
-The data structure of this type of data base is: 
+The database I am using is sqlite3 which is a relational database that organizes data into tables and relates them together using keys and is structured in such a way that is easily accesible. 
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-The tools that I've needed to develop this software is
-
-{Describe the programming language that you used and any libraries.}
-the programming language that I used is X with the libraries: x, y, z. 
+Tools used are VS code, python, and the sqlite3 library. 
 
 # Useful Websites
 
@@ -33,10 +25,15 @@ the programming language that I used is X with the libraries: x, y, z.
 - [Python sqlite3](https://docs.python.org/3.8/library/sqlite3.html#)
 - [SQLite Tutorial](https://www.sqlitetutorial.net/)
 - [TutorialsPoint: SQLite - Python](https://www.tutorialspoint.com/sqlite/sqlite_python.htm)
+- [SQLite3 Joining Tables Documentation](https://www.sqlitetutorial.net/sqlite-inner-join/)
 
 
 # Future Work
 
-- Add additional tables to your database and perform a join in your software between two of the tables.
-- Use at least two of the aggregate functions to summarize numerical data in your database.
-- Demonstrate the use of a column containing a date or time along with a query that demonstrates filtering within a date or time range.
+- Add additional table for tax information to join to the employee table.
+- Make a software video demo for the project. 
+- Finish overview of the project. 
+
+# Addition Ideas/Concepts
+- I might use two aggregate functions to summarize numerical data in the database.
+- Use a column containing a date or time along with a query that demonstrates filtering within a date or time range.

@@ -24,6 +24,10 @@ cursor = connection.cursor()
 # Create table (if it does not already exist)
 cursor.execute("CREATE TABLE IF NOT EXISTS employees (name TEXT, title TEXT, pay REAL, contact TEXT, department TEXT)")
        
+# Second table
+cursor.execute("CREATE TABLE IF NOT EXISTS taxes (name TEXT, taxbracket TEXT, taxamount TEXT)")
+
+
 def get_name(cursor):
     cursor.execute("SELECT name FROM employees")
     results = cursor.fetchall()
