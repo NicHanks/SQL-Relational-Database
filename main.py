@@ -1,7 +1,7 @@
 """
-SQL Database Workshop
 
-This Database will store employee name, contact details, and department. 
+This SQL Database stores employee name, title, pay, contact details, and department. 
+
 """
 
 import sqlite3
@@ -18,11 +18,11 @@ def analyze_object(object):
     print()
 
 # Connect to the database
-connection = sqlite3.connect('records.db')
+connection = sqlite3.connect('employeedatabase.db')
 cursor = connection.cursor()
 
 # Create table (if it does not already exist)
-cursor.execute("CREATE TABLE IF NOT EXISTS employees (name TEXT, title TEXT, pay REAL)")
+cursor.execute("CREATE TABLE IF NOT EXISTS employees (name TEXT, title TEXT, pay REAL, contact TEXT, department TEXT)")
        
 def get_name(cursor):
     cursor.execute("SELECT name FROM employees")
@@ -51,20 +51,22 @@ while choice != "5":
         # Display Employees
         result = cursor.execute("SELECT * FROM employees ORDER BY pay DESC")
         # analyze_object(result)
-        print("{:>10}  {:>10}  {:>10}".format("Name", "Title", "Pay"))
+        print("{:>10}  {:>10}  {:>10}  {:>10}  {:>10}".format("Name", "Title", "Pay", "Contact", "Department"))
         for record in cursor.fetchall():
-            print("{:>10}  {:>10}  {:>10}".format(record[0], record[1], record[2]))
+            print("{:>10}  {:>10}  {:>10}  {:>10}  {:>10}".format(record[0], record[1], record[2], record[3], record[4]))
     elif choice == "2":
         # Add New Employee
         try:
             name = input("Name: ")
             title = input("Title: ")
             pay = float(input("Pay: "))
-            values = (name, title, pay)
-            cursor.execute("INSERT INTO employees VALUES (?,?,?)", values)
+            contact = input("Contact Number: ")
+            dept = input("Department: ")
+            values = (name, title, pay, contact, dept)
+            cursor.execute("INSERT INTO employees VALUES (?,?,?,?,?)", values)
             connection.commit()
         except ValueError:
-            print("Invalid pay!")
+            print("Unable to process. Try again.")
     elif choice == "3":
         # Update Employee Pay
         try:
