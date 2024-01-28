@@ -27,6 +27,8 @@ cursor.execute("CREATE TABLE IF NOT EXISTS employees (name TEXT, title TEXT, pay
 # Second table
 cursor.execute("CREATE TABLE IF NOT EXISTS taxes (name TEXT, taxbracket TEXT, taxamount TEXT)")
 
+# Inner joining taxes to employees @ employees.names/taxes.names
+cursor.execute("SELECT employees.name AS employees_name, taxes.name AS taxes_name FROM employees INNER JOIN taxes ON employees.name = taxes.name")
 
 def get_name(cursor):
     cursor.execute("SELECT name FROM employees")
